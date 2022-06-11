@@ -16,8 +16,17 @@ public class Flujo {
     }
 
     private static void metodo2() {
-        System.out.println("Inicio del metodo2");        
+        System.out.println("Inicio del metodo2");
+        ArithmeticException aException = new ArithmeticException();
         
+        try {
+        	throw aException;			
+		} catch (Exception exception) {
+			System.out.println("Atrapo excepciones");
+			exception.printStackTrace();			
+		}        
+        
+        /*
         for(int i = 1; i <= 5; i++) {
         	System.out.println(i);        	
             
@@ -36,6 +45,8 @@ public class Flujo {
 				exception.printStackTrace();
 			}
         }
+        */
+        
         System.out.println("Fin del metodo2");
     }
 }
