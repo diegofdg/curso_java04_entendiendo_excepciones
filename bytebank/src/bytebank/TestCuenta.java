@@ -2,16 +2,17 @@ package bytebank;
 
 public class TestCuenta {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException {
 		
-		CuentaCorriente cc = null;
-		int num = 0;
-		int resultado = 30/num;
-		CuentaAhorro ca = new CuentaAhorro(2, 333);
-		cc.depositar(2000);
-		cc.transferir(1000, ca);
-		
-		System.out.println(cc.getSaldo());
-		System.out.println(ca.getSaldo());
+		CuentaCorriente cc = new CuentaCorriente (111, 111);
+        cc.depositar(100.0);
+
+        CuentaAhorro ca = new CuentaAhorro(222, 222);
+        ca.depositar(200.0);
+
+        cc.transferir(110.0, ca);
+
+        System.out.println("CC: " + cc.getSaldo());
+        System.out.println("CA: " + ca.getSaldo());
 	}
 }

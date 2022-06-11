@@ -1,12 +1,13 @@
 package java_stack;
 
-public class MiException extends RuntimeException {
-	
+@SuppressWarnings("serial")
+public class MiException extends Exception {
+
 	public MiException() {
 		super();
 	}
 	
 	public MiException(String message) {
 		super(message);
-	}
+	}	
 }

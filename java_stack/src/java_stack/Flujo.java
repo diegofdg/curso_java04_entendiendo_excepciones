@@ -3,14 +3,13 @@ package java_stack;
 public class Flujo {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Inicio del main");
+        System.out.println("Inicio main");
         metodo1();
-        System.out.println("Fin del main");
+        System.out.println("Fin de main");
     }
 
     private static void metodo1() {
-    	System.out.println("Inicio de metodo1");
+        System.out.println("Inicio de metodo1");
         try {
             metodo2();
         } catch(MiException ex) {

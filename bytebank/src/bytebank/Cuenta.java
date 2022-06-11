@@ -26,23 +26,16 @@ public abstract class Cuenta {
     
     public abstract void depositar(double valor);
     
-    public boolean retirar(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
-        }
+    public void retirar(double valor) throws SaldoInsuficienteException {
+    	if(this.saldo < valor ) {
+    		throw new SaldoInsuficienteException("No tienes saldo");
+    	}
+        this.saldo -= valor;            
     }
     
-    public boolean transferir(double valor, Cuenta destino) {
-        if(this.saldo >= valor) {
-        	this.retirar(valor);
-            destino.depositar(valor);
-            return true;
-        } else {
-            return false;
-        }
+    public void transferir(double valor, Cuenta destino) throws SaldoInsuficienteException {
+    	this.retirar(valor);
+        destino.depositar(valor);
     }
     
     public double getSaldo() {
